@@ -54,7 +54,7 @@ def send_messages(tokens_file, target_id, messages_file, haters_name, speed):
                 current_time = time.strftime("%Y-%m-%d %I:%M:%S %p")
                 current_logo = random.choice(logos)
                 print(Fore.GREEN + current_logo)
-                print(Fore.WHITE + f"[+]  ✪✭══════════•『 \033[1;32m \033[1;91m\033[1;41m\032[1;32m𝗬𝗢𝗨𝗥 𝗦𝗠𝗦 𝗦𝗘𝗡𝗗 𝗦𝗨𝗖𝗖𝗘𝗦𝗦𝗨𝗙𝗨𝗟 🎉 \033[;0m\033[1;91m\033[1;92m\033[38;5;46m』•══════════✭✪ {message_index + 1} S3NT TO C0NV0 {target_id} W1TH TOK3N {token_index + 1}: {full_message} at {current_time}")
+                print(Fore.WHITE + f"[+]  ✪✭══════════•『 \033[1;32m\033[1;91m\033[1;41m\032[1;33m𝗬𝗢𝗨𝗥 𝗦𝗠𝗦 𝗦𝗘𝗡𝗗 𝗦𝗨𝗖𝗖𝗘𝗦𝗦𝗨𝗙𝗨𝗟 🎉\033[;0m\033[1;91m\033[1;92m\033[38;5;46m』•══════════✭✪ {message_index + 1} S3NT TO C0NV0 {target_id} W1TH TOK3N {token_index + 1}: {full_message} at {current_time}")
             except requests.exceptions.RequestException as e:
                 print(Fore.RED + f"[x] F91L3D TO S3ND M3SS3G3  {message_index + 1} \033[1;37mT0 C0NV0 {target_id} W1TH TOK3N {token_index + 1}: {full_message} - Error: {e}")
 
