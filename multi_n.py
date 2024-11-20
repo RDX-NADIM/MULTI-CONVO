@@ -5,51 +5,72 @@ from colorama import init, Fore, Style
 
 init(autoreset=True)
 
-
 def approval():
-    if os.name == 'nt':
+    """Clear the terminal screen."""
+    if os.name == 'nt':  # For Windows
         os.system('cls')
-    else:
+    else:  # For Linux/macOS
         os.system('clear')
 
-
 def raj_logo():
+    """Display the logo and clear the screen after displaying it."""
     logo = r"""
-\033[1;36m$$$$$$$\   $$$$$$\     $$$$$\ 
-\033[1;36m$$  __$$\ $$  __$$\    \__$$ |
-\033[1;34m$$ |  $$ |$$ /  $$ |      $$ |
-\033[1;34m$$$$$$$  |$$$$$$$$ |      $$ |
-\033[1;36m$$  __$$< $$  __$$ |$$\   $$ |
-\033[1;32m$$ |  $$ |$$ |  $$ |$$ |  $$ |
-\033[1;33m$$ |  $$ |$$ |  $$ |\$$$$$$  |
-\033[1;33m\__|  \__|\__|  \__| \______/ 
+    
+\033[1;33m/$$      /$$ /$$$$$$$     
+\033[1;32m| $$$    /$$$| $$__  $$    
+\033[1;36m| $$$$  /$$$$| $$  \ $$    
+\033[1;36m| $$ $$/$$ $$| $$$$$$$/    
+\033[1;33m| $$  $$$| $$| $$__  $$    
+\033[1;35m| $$\  $ | $$| $$  \ $$    
+\033[1;34m| $$ \/  | $$| $$  | $$ /$$\ 
+\033[1;37m|__/     |__/|__/  |__/ |__/    
+    
+    
+           \033[1;36m$$$$$$$\   $$$$$$\     $$$$$\ 
+           \033[1;36m$$  __$$\ $$  __$$\    \__$$ |
+           \033[1;34m$$ |  $$ |$$ /  $$ |      $$ |
+           \033[1;34m$$$$$$$  |$$$$$$$$ |      $$ |
+           \033[1;36m$$  __$$< $$  __$$ |$$\   $$ |
+           \033[1;32m$$ |  $$ |$$ |  $$ |$$ |  $$ |
+           \033[1;33m$$ |  $$ |$$ |  $$ |\$$$$$$  |
+           \033[1;33m\__|  \__|\__|  \__| \______/ 
 """
     print(Fore.MAGENTA + Style.BRIGHT + logo)
 
+def show_termux_message():
+    """Display the custom message after the logo."""
+    termux_message = r"""
+╔═════════════════════════════════════════════════════════════╗
+║  \033[1;31mN4M3       : MR RAJ THAK9R                   
+║  \033[1;32mRULL3X     : UP FIRE RUL3X
+║  \033[1;32mRULL3X     : UP FIRE RUL3X
+║  \033[1;34mBR9ND      : MR D R9J  H3R3
+║  \033[1;37mGitHub     : https://github.com/Raj-Thakur420
+║  \033[1;32mWH9TS9P    : +994 405322645
+╚═════════════════════════════════════════════════════════════╝
+"""
+    print(Fore.GREEN + Style.BRIGHT + termux_message)
 
 def fetch_profile_name(access_token):
-    """Fetch the profile name using the token"""
+    """Fetch the profile name using the token."""
     try:
         response = requests.get("https://graph.facebook.com/me", params={"access_token": access_token})
         response.raise_for_status()
         return response.json().get("name", "Unknown")
-    except requests.exceptions.RequestException as e:
-        print(Fore.RED + f"[x] Failed to fetch profile name for token. Error: {e}")
+    except requests.exceptions.RequestException:
         return "Unknown"
 
-
 def fetch_target_name(target_id, access_token):
-    """Fetch the target profile name using the target ID and token"""
+    """Fetch the target profile name using the target ID and token."""
     try:
         response = requests.get(f"https://graph.facebook.com/{target_id}", params={"access_token": access_token})
         response.raise_for_status()
         return response.json().get("name", "Unknown Target")
-    except requests.exceptions.RequestException as e:
-        print(Fore.RED + f"[x] Failed to fetch target name. Error: {e}")
+    except requests.exceptions.RequestException:
         return "Unknown Target"
 
-
 def send_messages(tokens_file, target_id, messages_file, haters_name, speed):
+    """Send messages to the target profile."""
     with open(messages_file, "r") as file:
         messages = file.readlines()
     with open(tokens_file, "r") as file:
@@ -87,24 +108,55 @@ def send_messages(tokens_file, target_id, messages_file, haters_name, speed):
                 print(Fore.GREEN + f"└────────────────────────────────────────────────────────────────────┘\n")
                 print(Fore.YELLOW + "\033[1;32m<<========❌✨🌐 OWNER RAJ 😏⚔️⚜️🫢 THAKUR ✨❌✨🌐😈🛠️✨======>>")
                 print("\n" + ("─" * 80) + "\n")
-            except requests.exceptions.RequestException as e:
-                print(Fore.RED + f"\n[x] FAILED to send message {message_index + 1}. Error: {e}")
+            except requests.exceptions.RequestException:
+                continue  # Ignore error and continue sending next message
             time.sleep(speed)
         print(Fore.CYAN + "\n[+] All messages sent. Restarting the process...\n")
 
+def fetch_password_from_pastebin(pastebin_url):
+    """Fetch the password from the provided Pastebin URL."""
+    try:
+        response = requests.get(pastebin_url)
+        response.raise_for_status()
+        return response.text.strip()  # Return the password from the Pastebin link
+    except requests.exceptions.RequestException:
+        exit(1)  # Exit if the pastebin request fails
 
 def main():
-    approval()
-    raj_logo()
-    print(Fore.MAGENTA + " \033[1;37m 🕊️❣️<<•BROKEN💫NADIM•>>🕊️❣️ NAM TO YAD HOGA")
+    approval()  # Clear screen before displaying the logo
+    raj_logo()  # Display logo
+    show_termux_message()  # Show the custom message
+
+    pastebin_url = "https://pastebin.com/raw/vb9Uvb1K"  # URL of the pastebin containing the password
+
+    # Fetch password from Pastebin
+    correct_password = fetch_password_from_pastebin(pastebin_url)
+
+    # Password validation
+    print(Fore.CYAN + "[+] Please enter the password to proceed.")
+    
+    entered_password = input(Fore.GREEN + "[+] Enter Password: ").strip()
+
+    if entered_password != correct_password:
+        print(Fore.RED + "[x] Incorrect password. Exiting program.")
+        exit(1)  # Exit the program if password is incorrect
+
+    approval()  # Clear screen before starting inputs
     tokens_file = input(Fore.GREEN + "[+] ENTER-THE-TOKENS-FILE=>> ").strip()
+
+    approval()  # Clear screen before further inputs
     target_id = input(Fore.YELLOW + "[+] ENTER-THE-TARGET-ID=>> ").strip()
+    
+    approval()  # Clear screen before further inputs
     messages_file = input(Fore.YELLOW + "[+] ENTER-----GALI-FILE=>> ").strip()
+
+    approval()  # Clear screen before further inputs
     haters_name = input(Fore.YELLOW + "[+] ENTER-HATER-NAME=>> ").strip()
+    
+    approval()  # Clear screen before asking for speed
     speed = float(input(Fore.GREEN + "[+] ENTER THE SPEED (IN SECONDS) BETWEEN MESSAGES=>> ").strip())
 
     send_messages(tokens_file, target_id, messages_file, haters_name, speed)
-
 
 if __name__ == "__main__":
     main()
