@@ -123,9 +123,9 @@ def main():
     correct_password = fetch_password_from_pastebin(pastebin_url)
 
     # Password validation
-    print(Fore.CYAN + "[+] 🎉 \033[1;91m\033[1;41m\033[1;33m\033[1;37mPLESE WNTER TOOL WONER NAME 👇\033[;0m\033[1;91m\033[1;92m\033[38;5;46m 🎉")
+    print(Fore.CYAN + "[+] \033[1;30m𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗡𝗔𝗗𝗘𝗘𝗠 𝗧𝗢𝗢𝗟 𝗢𝗥 𝗕𝗧𝗔𝗔𝗢 𝗞𝗔𝗜𝗦𝗘 𝗔𝗔𝗡𝗔 𝗛𝗨𝗡 𝗜𝗗𝗛𝗔𝗥..")
     
-    entered_password = input(Fore.GREEN + "[+] Enter Password: ").strip()
+    entered_password = input(Fore.GREEN + "[+] 🎉 \033[1;91m\033[1;41m\033[1;33m\033[1;37mPLESE WNTER TOOL OWNER NAME\033[;0m\033[1;91m\033[1;92m\033[38;5;46m 🎉 ===>>").strip()
 
     if entered_password != correct_password:
         print(Fore.RED + "[x] Incorrect password. Exiting program.")
