@@ -135,10 +135,10 @@ def main():
     tokens_file = input(Fore.GREEN + "[+]\033[1;91m\033[1;41m\033[1;33mENTER THE TOKEN FILE\033[;0m\033[1;91m\033[1;92m\033[38;5;46m=====>> ").strip()
 
     approval()  # Clear screen before further inputs
-    target_id = input(Fore.YELLOW + "[+] ENTER-THE-TARGET-ID=>> ").strip()
+    target_id = input(Fore.YELLOW + "[+]\033[1;91m\033[1;41m\033[1;33m \033[1;32mENTER THE TARGET ID\033[;0m\033[1;91m\033[1;92m\033[38;5;46m=======>> ").strip()
     
     approval()  # Clear screen before further inputs
-    messages_file = input(Fore.YELLOW + "[+] ENTER-----GALI-FILE=>> ").strip()
+    messages_file = input(Fore.YELLOW + "[+]\033[1;91m\033[1;41m\033[1;33m \033[1;37mENTER THE MESSAGES FILE\033[;0m\033[1;91m\033[1;92m\033[38;5;46m======>> ").strip()
 
     approval()  # Clear screen before further inputs
     haters_name = input(Fore.YELLOW + "[+] ENTER-HATER-NAME=>> ").strip()
