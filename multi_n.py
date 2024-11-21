@@ -123,7 +123,7 @@ def main():
     correct_password = fetch_password_from_pastebin(pastebin_url)
 
     # Password validation
-    print(Fore.CYAN + "[+] 🎉 \033[1;91m\033[1;41m\033[1;33m PLESE OWNER NAME WNTER\033[;0m\033[1;91m\033[1;92m\033[38;5;46m 🎉")
+    print(Fore.CYAN + "[+] 🎉 \033[1;91m\033[1;41m\033[1;33m\033[1;37mPLESE OWNER NAME WNTER\033[;0m\033[1;91m\033[1;92m\033[38;5;46m 🎉")
     
     entered_password = input(Fore.GREEN + "[+] Enter Password: ").strip()
 
