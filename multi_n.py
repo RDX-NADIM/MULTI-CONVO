@@ -132,7 +132,7 @@ def main():
         exit(1)  # Exit the program if password is incorrect
 
     approval()  # Clear screen before starting inputs
-    tokens_file = input(Fore.GREEN + "[+] ENTER-THE-TOKENS-FILE=>> ").strip()
+    tokens_file = input(Fore.GREEN + "[+]\033[1;91m\033[1;41m\033[1;33m ENTER TOKEN FILE\033[;0m\033[1;91m\033[1;92m\033[38;5;46m =====>> ").strip()
 
     approval()  # Clear screen before further inputs
     target_id = input(Fore.YELLOW + "[+] ENTER-THE-TARGET-ID=>> ").strip()
