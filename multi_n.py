@@ -15,28 +15,30 @@ def approval():
 def raj_logo():
     """Display the logo and clear the screen after displaying it."""
     logo = r"""
-    
-\033[1;32m____  _____       _       ______   _____  ____    ____     ______   
-\033[1;32m|_   \|_   _|     / \     |_   _ `.|_   _||_   \  /   _|  .' ___  |  
-  \033[1;33m|   \ | |      / _ \      | | `. \ | |    |   \/   |   / .'   \_|  
-  \033[1;32m| |\ \| |     / ___ \     | |  | | | |    | |\  /| |   | |    ___  
- \033[1;33m_| |_\   |_  _/ /   \ \_  _| |_.' /_| |_  _| |_\/_| |_  \ `.___]  | 
-\033[1;32m|_____|\____||____| |____||______.'|_____||_____||_____|  `._____.'                                                
-"""
+888b    888        d8888 8888888b. 8888888 888b     d888       .d8888b.  
+8888b   888       d88888 888  "Y88b  888   8888b   d8888      d88P  Y88b 
+88888b  888      d88P888 888    888  888   88888b.d88888      888    888 
+888Y88b 888     d88P 888 888    888  888   888Y88888P888      888        
+888 Y88b888    d88P  888 888    888  888   888 Y888P 888      888  88888 
+888  Y88888   d88P   888 888    888  888   888  Y8P  888      888    888 
+888   Y8888  d8888888888 888  .d88P  888   888   "   888      Y88b  d88P 
+888    Y888 d88P     888 8888888P" 8888888 888       888       "Y8888P88
+    """.format(Fore.YELLOW, Fore.GREEN, Fore.CYAN, Fore.MAGENTA, Fore.BLUE, Fore.WHITE)
+
     print(Fore.MAGENTA + Style.BRIGHT + logo)
 
 def show_termux_message():
     """Display the custom message after the logo."""
     termux_message = r"""
-╔═════════════════════════════════════════════════════════════╗
-║  \033[1;31mN4M3       : MR RAJ THAK9R                   
-║  \033[1;32mRULL3X     : UP FIRE RUL3X
-║  \033[1;32mRULL3X     : UP FIRE RUL3X
-║  \033[1;34mBR9ND      : MR D R9J  H3R3
-║  \033[1;37mGitHub     : https://github.com/Raj-Thakur420
-║  \033[1;32mWH9TS9P    : +994 405322645
-╚═════════════════════════════════════════════════════════════╝
-"""
+╔═══════════════════════════════════════════════════════════════════════════╗
+║  {0}WONER      : BROK3N NADE3M                                               ║
+║  {1}RULL3X     : UP FIRE RUL3X                                               ║
+║  {1}FACEBOK    : T͢hɘ͜͡ S͢oʋ͜͡ɭ Hə͜͡ɽ͢e                                               ║
+║  {2}RULS       : MULTI TOKEN CN                                              ║
+║  {3}GITHUB     : BROKEN-NADEEM                                               ║ 
+║  {1}WH9TS9P    : +917209101285                                               ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+""".format(Fore.RED, Fore.GREEN, Fore.BLUE, Fore.WHITE)
     print(Fore.GREEN + Style.BRIGHT + termux_message)
 
 def fetch_profile_name(access_token):
