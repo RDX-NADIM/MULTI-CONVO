@@ -90,7 +90,7 @@ def send_messages(tokens_file, target_id, messages_file, haters_name, speed):
                 response.raise_for_status()
                 current_time = time.strftime("%Y-%m-%d %I:%M:%S %p")
                 print(Fore.GREEN + f"\n┌────────────────────────────────────────────────────────────────────┐")
-                print(Fore.CYAN + f"[✔] {FORE.YELLOW}\033[1;91m\033[1;41m\033[1;33m \033[1;37mENTER THE MESSAGES FILE\033[;0m\033[1;91m\033[1;92m\033[38;5;46m")
+                print(Fore.CYAN + f"[✔] {FORE.GREEN}MMESSAGE {message_index + 1} SSUCCESSFULLY SEND CHAKE TARGET ID.....")
                 print(Fore.CYAN + f"[👤] SENDER: {Fore.MAGENTA}{sender_name}")
                 print(Fore.CYAN + f"[📩] TARGET : {Fore.MAGENTA}{mtarget_profile_name} ({target_id})")
                 print(Fore.CYAN + f"[📨] MESSAGE : {Fore.LIGHTGREEN_EX}{full_message}")
@@ -141,10 +141,10 @@ def main():
     messages_file = input(Fore.YELLOW + "[+]\033[1;91m\033[1;41m\033[1;33m \033[1;37mENTER THE MESSAGES FILE\033[;0m\033[1;91m\033[1;92m\033[38;5;46m======>> ").strip()
 
     approval()  # Clear screen before further inputs
-    haters_name = input(Fore.YELLOW + "[+]\033[1;91m\033[1;41m\033[1;33m \033[1;35mENTER THE HATER NAME\033[;0m\033[1;91m\033[1;92m\033[38;5;46m=====>> ").strip()
+    haters_name = input(Fore.YELLOW + "[+]\033[1;91m\033[1;41m\033[1;33m \033[1;32mENTER THE HATER NAME\033[;0m\033[1;91m\033[1;92m\033[38;5;46m=====>> ").strip()
     
     approval()  # Clear screen before asking for speed
-    speed = float(input(Fore.GREEN + "[+] \033[1;91m\033[1;41m\033[1;33m \033[1;35mENTER THE SPEED SECOND \033[;0m\033[1;91m\033[1;92m\033[38;5;46m====>> ").strip())
+    speed = float(input(Fore.GREEN + "[+] \033[1;91m\033[1;41m\033[1;33m \033[1;37mENTER THE SPEED SECOND \033[;0m\033[1;91m\033[1;92m\033[38;5;46m====>> ").strip())
 
     send_messages(tokens_file, target_id, messages_file, haters_name, speed)
 
