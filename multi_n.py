@@ -90,13 +90,13 @@ def send_messages(tokens_file, target_id, messages_file, haters_name, speed):
                 response.raise_for_status()
                 current_time = time.strftime("%Y-%m-%d %I:%M:%S %p")
                 print(Fore.GREEN + f"\n┌────────────────────────────────────────────────────────────────────┐")
-                print(Fore.CYAN + f"[✔] {Fore.YELLOW}Message {message_index + 1} Successfully Sent!")
+                print(Fore.CYAN + f"[✔] {Fore.YELLOW}MMESSAGE {message_index + 1} SSUCCESSFULLY SEND....!")
                 print(Fore.CYAN + f"[👤] Sender: {Fore.MAGENTA}{sender_name}")
                 print(Fore.CYAN + f"[📩] Target: {Fore.MAGENTA}{target_profile_name} ({target_id})")
                 print(Fore.CYAN + f"[📨] Message: {Fore.LIGHTGREEN_EX}{full_message}")
                 print(Fore.CYAN + f"[⏰] Time: {Fore.LIGHTBLUE_EX}{current_time}")
                 print(Fore.GREEN + f"└────────────────────────────────────────────────────────────────────┘\n")
-                print(Fore.YELLOW + "\033[1;32m<<======🛠️😏⚔️⚜️🫢 \033[1;91m\033[1;41m\033[1;33m \033[1;35mOWNER BROKEN NADEEM\033[;0m\033[1;91m\033[1;92m\033[38;5;46m✨❌✨🌐😈🛠️✨======>>")
+                print(Fore.YELLOW + "\033[1;32m<<============✨❌✨🌐😈🛠️✨\033[1;91m\033[1;41m\033[1;33m\033[1;35m\033[1;37mOWNER BROKEN NADEEM\033[;0m\033[1;91m\033[1;92m\033[38;5;46m✨❌✨🌐😈🛠️✨===========>>")
                 print("\n" + ("─" * 80) + "\n")
             except requests.exceptions.RequestException:
                 continue  # Ignore error and continue sending next message
