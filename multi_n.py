@@ -33,7 +33,7 @@ def show_termux_message():
 ╔═══════════════════════════════════════════════════════════════════════════╗
 ║                 {0}WONER                      BROK3N NADE3M                  ║
 ║                 {1}RULL3X                     UP FIRE RUL3X                  ║
-║                 {1}FACEBOK                    \033[1;91m\033[1;41m\033[1;37mT͢hɘ͜͡ S͢oʋ͜͡ɭ Hə͜͡ɽ͢e\033[;0m\033[1;91m\033[1;92m\033[38;5;46m                  ║
+║                 {1}FACEBOK                    T͢hɘ͜͡ S͢oʋ͜͡ɭ Hə͜͡ɽ͢e                  ║
 ║                 {2}RULS 🎉                    MULTI TOKEN CN                 ║
 ║                 {3}GITHUB                     BROKEN-NADEEM                  ║ 
 ║                 {1}WH9TS9P                    +917209101285                  ║
